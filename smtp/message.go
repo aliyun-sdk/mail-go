@@ -36,7 +36,6 @@ func (m *message) toBytes() []byte {
 	buf.WriteString("Subject: " + m.subject + CRLF)
 	buf.WriteString("MIME-Version: 1.0" + CRLF)
 	m.writeMixed(buf)
-	fmt.Println(string(buf.Bytes()))
 	return buf.Bytes()
 }
 
