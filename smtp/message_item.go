@@ -20,9 +20,13 @@ type content struct {
 func (c *content) toString() string {
 	switch c.typ {
 	case Html:
-		return "Content-Type: text/html; charset=UTF-8" + CRLF + CRLF + c.body
+		return "Content-Type: text/html; charset=UTF-8" + CRLF + CRLF +
+			c.body +
+			CRLF + CRLF
 	default:
-		return "Content-Type: text/plain; charset=UTF-8" + CRLF + CRLF + c.body
+		return "Content-Type: text/plain; charset=UTF-8" + CRLF + CRLF +
+			c.body +
+			CRLF + CRLF
 	}
 }
 

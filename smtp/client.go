@@ -19,6 +19,9 @@ func (c *Client) Send(opts ...Option) error {
 	if msg.replyTo.name == "" {
 		msg.replyTo.name = msg.from.name
 	}
+	if msg.replyTo.addr == "" {
+		msg.replyTo.addr = msg.from.addr
+	}
 	return smtp.SendMail(c.addr, c.auth, msg.from.addr, msg.allAddrs(), msg.toBytes())
 }
 
